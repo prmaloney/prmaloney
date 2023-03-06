@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import '@picocss/pico';
+
 	const links = [
 		{
-			href: '/home',
+			href: '/',
 			title: 'Home'
 		},
 		{
@@ -20,16 +21,18 @@
 	];
 </script>
 
-<div>
-	{#each links as { href, title }}
-		<a {href} class:active={$page.url.pathname === href}>{title}</a>
-	{/each}
-</div>
+<header>
+	<nav>
+		<ul>
+			{#each links as { href, title }}
+				<li>
+					<a {href}>{title}</a>
+				</li>
+			{/each}
+		</ul>
+	</nav>
+</header>
 
-<slot />
-
-<style>
-	a.active {
-		background: gray;
-	}
-</style>
+<main class="container">
+	<slot />
+</main>
