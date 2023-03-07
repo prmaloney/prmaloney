@@ -11,3 +11,9 @@
 		<h3>{post.title}</h3>
 	</a>
 {/each}
+
+<style>
+	img {
+		max-width: 100%;
+	}
+</style>
