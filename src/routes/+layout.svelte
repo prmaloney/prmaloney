@@ -1,6 +1,4 @@
 <script lang="ts">
-	import '@picocss/pico';
-
 	const links = [
 		{
 			href: '/',
