@@ -1,6 +1,2 @@
-<script>
-	import '@picocss/pico';
-</script>
-
 <h1>Patrick Maloney</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<p>Hi I'm Patrick, a Software Engineer in Munich, Germany.</p>
