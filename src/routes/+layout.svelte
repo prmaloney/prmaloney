@@ -39,6 +39,8 @@
 
 <style lang="scss">
 	header {
+		background: #26233a;
+		padding: 1rem 0;
 		ul {
 			list-style-type: none;
 			display: flex;
@@ -49,11 +51,18 @@
 	:global(body) {
 		background: #191724;
 		font-family: Arial, sans-serif;
+		font-size: 1.2rem;
 		color: #e0def4;
+		margin: 0;
 	}
 
 	:global(h1) {
-		font-size: 4rem;
+		font-size: 5rem;
+	}
+
+	:global(h2) {
+		font-size: 2rem;
+		color: #ebbcba;
 	}
 
 	:global(img) {
@@ -61,7 +70,7 @@
 	}
 
 	:global(a) {
-		color: white;
+		color: #e0def4;
 		text-decoration: underline rgba(1, 1, 1, 0);
 		text-underline-offset: 0.2em;
 		transition: text-decoration-color 300ms, text-underline-offset 300ms;
@@ -74,5 +83,6 @@
 	.container {
 		width: 60%;
 		margin: auto;
+		margin-top: 1rem;
 	}
 </style>

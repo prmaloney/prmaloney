@@ -1,20 +1,38 @@
+<script>
+	import Icon from '../components/icon.svelte';
+</script>
+
 <div class="columns">
 	<div class="column">
 		<img src="photo_patrick01.jpg" alt="Patrick" />
 		<div class="socials">
 			<a href="https://github.com/prmaloney">
-				<img src="github-mark-white.svg" alt="GitHub" />
+				<Icon name="github" />
 			</a>
 			<a href="https://linkedin.com/in/prmaloney">
-				<img src="linkedin-svgrepo-com.svg" alt="LinkedIn" />
+				<Icon name="linkedin" />
 			</a>
 		</div>
 	</div>
 	<div class="column">
-		<h1>Patrick Maloney</h1>
+		<div class="intro">
+			<h1>Patrick Maloney</h1>
+			<p>
+				Hi I'm Patrick, a Software Engineer in Munich, Germany. I'm into lean software solutions
+				that solve specific problems.
+			</p>
+		</div>
+		<h2>My background</h2>
 		<p>
-			Hi I'm Patrick, a Software Engineer in Munich, Germany. I'm into lean software solutions that
-			solve specific problems.
+			I studied Computer Science at the University of Portland, Oregon, USA. I've worked in the US,
+			and Germany. I've worked in the automotive industry and as a consultant. Mainly I work on web
+			applications, but I've also worked on custom automation solutions and systems software in my
+			free time.
+		</p>
+		<p>
+			I moved to Germany in 2022, and I'm currently working at <a href="https://www.foobar.agency"
+				>foobar Agency</a
+			>.
 		</p>
 	</div>
 </div>
@@ -27,7 +45,22 @@
 	.column {
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
+
+		a {
+			color: #9ccfd8;
+			text-decoration: underline rgba(1, 1, 1, 0);
+			text-underline-offset: 0.2em;
+			transition: text-decoration-color 300ms, text-underline-offset 300ms;
+			&:hover {
+				text-decoration-color: #9ccfd8;
+				text-underline-offset: 0.4em;
+			}
+		}
+	}
+	.intro {
+		h1 {
+			margin-bottom: 0;
+		}
 	}
 
 	img {
@@ -37,18 +70,20 @@
 
 	.socials {
 		display: flex;
-		gap: 1rem;
-		justify-content: center;
-		img {
-			max-width: 3rem;
-			padding: 5px;
-			border-radius: 50%;
-			border-width: 2px;
-			border-style: solid;
-			border-color: transparent;
-			transition: border-color 300ms;
+		justify-content: space-evenly;
+		max-height: fit-content;
+
+		a {
+			display: inline-block;
+			text-decoration: none;
+			border-radius: 100%;
+			padding: 0 2px;
+			outline: 1px solid transparent;
+			outline-offset: 0px;
+			transition: outline-color linear 300ms, outline-offset linear 300ms;
 			&:hover {
-				border-color: white;
+				outline-offset: 2px;
+				outline-color: white;
 			}
 		}
 	}
