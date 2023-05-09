@@ -50,7 +50,8 @@
 		</p>
 		<p>
 			I'm interested in working on projects that have a positive impact on the world. I'm also
-			interested in working on projects that are technically challenging.
+			interested in working on projects that are technically challenging and allow for constant
+			learning.
 		</p>
 	</div>
 </div>
