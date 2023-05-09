@@ -6,10 +6,10 @@
 	<div class="column">
 		<img src="photo_patrick01.jpg" alt="Patrick" />
 		<div class="socials">
-			<a href="https://github.com/prmaloney">
+			<a href="https://github.com/prmaloney" target="_blank" rel="noreferrer">
 				<Icon name="github" />
 			</a>
-			<a href="https://linkedin.com/in/prmaloney">
+			<a href="https://linkedin.com/in/prmaloney" target="_blank" rel="noreferrer">
 				<Icon name="linkedin" />
 			</a>
 		</div>
@@ -23,16 +23,34 @@
 			</p>
 		</div>
 		<h2>My background</h2>
+		<p>I studied Computer Science at the University of Portland, Oregon, USA.</p>
 		<p>
-			I studied Computer Science at the University of Portland, Oregon, USA. I've worked in the US,
-			and Germany. I've worked in the automotive industry and as a consultant. Mainly I work on web
-			applications, but I've also worked on custom automation solutions and systems software in my
-			free time.
+			After I graduated in 2020 I worked at <a
+				href="https://www.cdkglobal.com/"
+				target="_blank"
+				rel="noreferrer">CDK Global</a
+			> in San Jose, CA. Here I gained experience building industrial React applications in the automotive
+			industry.
 		</p>
 		<p>
-			I moved to Germany in 2022, and I'm currently working at <a href="https://www.foobar.agency"
-				>foobar Agency</a
-			>.
+			I moved to Germany in 2022, and I'm currently working at <a
+				href="https://www.foobar.agency"
+				target="_blank"
+				rel="noreferrer">foobar Agency</a
+			>. Here I work as a consultant for various clients in and around Germany.
+		</p>
+		<p>
+			Mainly I work on web applications, but I've also worked on custom automation solutions and
+			systems software in my free time.
+		</p>
+		<h2>My goals</h2>
+		<p>
+			I'm looking for a position where I can work on interesting problems with a team of people who
+			are passionate about what they do.
+		</p>
+		<p>
+			I'm interested in working on projects that have a positive impact on the world. I'm also
+			interested in working on projects that are technically challenging.
 		</p>
 	</div>
 </div>
@@ -49,11 +67,11 @@
 		a {
 			color: #9ccfd8;
 			text-decoration: underline rgba(1, 1, 1, 0);
-			text-underline-offset: 0.2em;
+			text-underline-offset: 0;
 			transition: text-decoration-color 300ms, text-underline-offset 300ms;
 			&:hover {
 				text-decoration-color: #9ccfd8;
-				text-underline-offset: 0.4em;
+				text-underline-offset: 0.2em;
 			}
 		}
 	}
@@ -73,18 +91,27 @@
 		justify-content: space-evenly;
 		max-height: fit-content;
 
+		list-style-type: none;
+		padding: 0;
+		margin: 1rem 0 0;
+
 		a {
-			display: inline-block;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			text-decoration: none;
-			border-radius: 100%;
-			padding: 0 2px;
-			outline: 1px solid transparent;
-			outline-offset: 0px;
-			transition: outline-color linear 300ms, outline-offset linear 300ms;
+			background: #eb6f92;
+			padding: 0.5rem;
+			width: 4rem;
+			height: 4rem;
+			transition: scale 300ms;
 			&:hover {
-				outline-offset: 2px;
-				outline-color: white;
+				scale: 0.95;
 			}
+		}
+
+		a:nth-child(2) {
+			background: #f6c177;
 		}
 	}
 </style>

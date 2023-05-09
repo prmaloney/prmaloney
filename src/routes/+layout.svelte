@@ -4,10 +4,10 @@
 			href: '/',
 			title: 'Home'
 		},
-		{
-			href: '/blog',
-			title: 'Blog'
-		},
+		// {
+		// 	href: '/blog',
+		// 	title: 'Blog'
+		// },
 		{
 			href: '/projects',
 			title: 'Projects'
@@ -65,6 +65,11 @@
 		color: #ebbcba;
 	}
 
+	:global(h3) {
+		font-size: 1.5rem;
+		color: #ebbcba;
+	}
+
 	:global(img) {
 		max-width: 100%;
 	}
@@ -72,11 +77,11 @@
 	:global(a) {
 		color: #e0def4;
 		text-decoration: underline rgba(1, 1, 1, 0);
-		text-underline-offset: 0.2em;
+		text-underline-offset: 0;
 		transition: text-decoration-color 300ms, text-underline-offset 300ms;
 		&:hover {
-			text-decoration-color: rgba(255, 255, 255, 1);
-			text-underline-offset: 0.4em;
+			text-decoration-color: #e0def4;
+			text-underline-offset: 0.2em;
 		}
 	}
 
