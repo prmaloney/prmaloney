@@ -1,5 +1,14 @@
 import type { PageServerData } from './$types';
 
+type BlogLink = {
+  title: string;
+  coverImage: {
+    url: string;
+  };
+  slug: string;
+  date: string;
+};
+
 export const load: PageServerData = async () => {
   const query = `
     query {
@@ -7,6 +16,7 @@ export const load: PageServerData = async () => {
         id,
         slug,
         title,
+        date,
         coverImage {
           url
         }
@@ -27,5 +37,5 @@ export const load: PageServerData = async () => {
   );
 
   const { data } = await response.json();
-  return data;
+  return data as { posts: BlogLink[] };
 };
