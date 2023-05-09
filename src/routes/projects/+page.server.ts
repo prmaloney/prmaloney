@@ -1,30 +1,25 @@
 import type { PageServerData } from './$types';
-import { error } from '@sveltejs/kit';
 
-type BlogLink = {
-  title: string;
-  coverImage: {
-    url: string;
-  };
+type ProjectLink = {
+  name: string;
   slug: string;
-  date: string;
+  image: {
+    url: string;
+  }[];
+  tags: string[];
 };
 
 export const load: PageServerData = async () => {
-  throw error(404, {
-    message: 'Not found'
-  });
-
   const query = `
     query {
-      posts {
+      projects {
         id,
         slug,
-        title,
-        date,
-        coverImage {
+        name,
+        image {
           url
-        }
+        },
+        tags,
       },
     }
 `;
@@ -42,5 +37,5 @@ export const load: PageServerData = async () => {
   );
 
   const { data } = await response.json();
-  return data as { posts: BlogLink[] };
+  return data as { projects: ProjectLink[] };
 };
