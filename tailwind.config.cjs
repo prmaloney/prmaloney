@@ -10,6 +10,8 @@ export default {
     colors: {
       base: '#191724',
       surface: '#1f1d2e',
+      overlay: '#26233a',
+      subtle: '#908caa',
       rose: '#ebbcba',
       love: '#eb6f92',
       gold: '#f6c177',

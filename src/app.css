@@ -12,10 +12,6 @@
 		@apply font-league-spartan;
 	}
 
-	header {
-		@apply bg-surface;
-	}
-
 	h1 {
 		@apply text-6xl;
 		@apply mb-4;
