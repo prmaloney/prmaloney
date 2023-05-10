@@ -1,27 +1,17 @@
-<script>
+<script lang="ts">
 	import Icon from '../components/icon.svelte';
 </script>
 
-<div class="columns">
-	<div class="column">
-		<img src="photo_patrick01.jpg" alt="Patrick" />
-		<div class="socials">
-			<a href="https://github.com/prmaloney" target="_blank" rel="noreferrer">
-				<Icon name="github" />
-			</a>
-			<a href="https://linkedin.com/in/prmaloney" target="_blank" rel="noreferrer">
-				<Icon name="linkedin" />
-			</a>
-		</div>
+<div>
+	<div class="flex flex-col items-center">
+		<h1>Patrick Maloney</h1>
+		<img class="h-64 w-64 object-cover rounded-full mb-4" src="photo_patrick01.jpg" alt="Patrick" />
 	</div>
-	<div class="column">
-		<div class="intro">
-			<h1>Patrick Maloney</h1>
-			<p>
-				Hi I'm Patrick, a Software Engineer in Munich, Germany. I'm into lean software solutions
-				that solve specific problems.
-			</p>
-		</div>
+	<div class="flex flex-col gap-4">
+		<p>
+			Hi I'm Patrick, a Software Engineer in Munich, Germany. I'm into lean software solutions that
+			solve specific problems.
+		</p>
 		<h2>My background</h2>
 		<p>I studied Computer Science at the University of Portland, Oregon, USA.</p>
 		<p>
@@ -53,66 +43,34 @@
 			interested in working on projects that are technically challenging and allow for constant
 			learning.
 		</p>
+		<h2>Contact me</h2>
+		<div class="flex direction-row gap-4 mb-4">
+			<a
+				class="after:content-none bg-love hover:scale-110 transition ease-in-out duration-300"
+				href="https://github.com/prmaloney"
+				target="_blank"
+				rel="noreferrer"
+			>
+				<Icon name="github" />
+			</a>
+			<a
+				class="after:content-none bg-pine hover:scale-110 transition
+        ease-in-out duration-300"
+				href="https://linkedin.com/in/prmaloney"
+				target="_blank"
+				rel="noreferrer"
+			>
+				<Icon name="linkedin" />
+			</a>
+			<a
+				class="after:content-none bg-iris hover:scale-110 transition
+        ease-in-out duration-300"
+				href="mailto:pmaloney16@gmail.com"
+				target="_blank"
+				rel="noreferrer"
+			>
+				<Icon name="mail" />
+			</a>
+		</div>
 	</div>
 </div>
-
-<style lang="scss">
-	.columns {
-		display: flex;
-	}
-
-	.column {
-		display: flex;
-		flex-direction: column;
-
-		a {
-			color: #9ccfd8;
-			text-decoration: underline rgba(1, 1, 1, 0);
-			text-underline-offset: 0;
-			transition: text-decoration-color 300ms, text-underline-offset 300ms;
-			&:hover {
-				text-decoration-color: #9ccfd8;
-				text-underline-offset: 0.2em;
-			}
-		}
-	}
-	.intro {
-		h1 {
-			margin-bottom: 0;
-		}
-	}
-
-	img {
-		clip-path: circle();
-		max-width: 20rem;
-	}
-
-	.socials {
-		display: flex;
-		justify-content: space-evenly;
-		max-height: fit-content;
-
-		list-style-type: none;
-		padding: 0;
-		margin: 1rem 0 0;
-
-		a {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			text-decoration: none;
-			background: #eb6f92;
-			padding: 0.5rem;
-			width: 4rem;
-			height: 4rem;
-			transition: scale 300ms;
-			&:hover {
-				scale: 0.95;
-			}
-		}
-
-		a:nth-child(2) {
-			background: #f6c177;
-		}
-	}
-</style>
