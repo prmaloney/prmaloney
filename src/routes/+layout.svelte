@@ -31,7 +31,9 @@
 </script>
 
 <div class="flex flex-col min-h-screen">
-	<header class="sticky top-0 w-full bg-overlay backdrop-filter backdrop-blur-lg bg-opacity-50">
+	<header
+		class="z-10 sticky top-0 w-full bg-overlay backdrop-filter backdrop-blur-lg bg-opacity-50"
+	>
 		<nav class="px-8 py-4">
 			<ul class="flex direction-row gap-4">
 				{#each links as { href, title }}
