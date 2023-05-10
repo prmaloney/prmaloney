@@ -31,6 +31,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sveltejs/adapter-vercel": "^2.4.3",
 		"marked": "^5.0.1"
 	}
 }
