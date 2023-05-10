@@ -43,7 +43,7 @@
 		</nav>
 	</header>
 
-	<main class="flex-1 sm:mx-80 my-8">
+	<main class="flex-1 px-20 sm:px-30 md:px-40 lg:px-60 xl:px-80 my-8">
 		{#key data.url}
 			<div
 				in:fly={{ duration: transitionSpeed, y: -50, easing: cubicInOut, delay: transitionSpeed }}
