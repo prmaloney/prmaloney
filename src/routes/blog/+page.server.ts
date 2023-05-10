@@ -44,3 +44,5 @@ export const load: PageServerData = async () => {
   const { data } = await response.json();
   return data as { posts: BlogLink[] };
 };
+
+export const prerender = false;
