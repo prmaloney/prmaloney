@@ -4,7 +4,11 @@
 <div>
 	<div class="flex flex-col items-center">
 		<h1>Patrick Maloney</h1>
-		<img class="h-64 w-64 object-cover rounded-full mb-4" src="photo_patrick01.jpg" alt="Patrick" />
+		<img
+			class="h-40 w-40 md:h-64 md:w-64 object-cover rounded-full mb-4"
+			src="photo_patrick01.jpg"
+			alt="Patrick"
+		/>
 	</div>
 	<div class="flex flex-col gap-4">
 		<p>
