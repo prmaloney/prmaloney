@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Icon from '../components/icon.svelte';
 </script>
 
 <div>
@@ -43,34 +42,5 @@
 			interested in working on projects that are technically challenging and allow for constant
 			learning.
 		</p>
-		<h2>Contact me</h2>
-		<div class="flex direction-row gap-4 mb-4">
-			<a
-				class="after:content-none bg-love hover:scale-110 transition ease-in-out duration-300"
-				href="https://github.com/prmaloney"
-				target="_blank"
-				rel="noreferrer"
-			>
-				<Icon name="github" />
-			</a>
-			<a
-				class="after:content-none bg-pine hover:scale-110 transition
-        ease-in-out duration-300"
-				href="https://linkedin.com/in/prmaloney"
-				target="_blank"
-				rel="noreferrer"
-			>
-				<Icon name="linkedin" />
-			</a>
-			<a
-				class="after:content-none bg-iris hover:scale-110 transition
-        ease-in-out duration-300"
-				href="mailto:pmaloney16@gmail.com"
-				target="_blank"
-				rel="noreferrer"
-			>
-				<Icon name="mail" />
-			</a>
-		</div>
 	</div>
 </div>
