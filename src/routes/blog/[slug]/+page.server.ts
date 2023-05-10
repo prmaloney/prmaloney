@@ -1,5 +1,6 @@
 import type { PageServerLoad } from './$types';
 import { marked } from 'marked';
+import { error } from '@sveltejs/kit';
 
 type Post = {
   title: string;
@@ -14,6 +15,10 @@ type Post = {
 };
 
 export const load: PageServerLoad = async ({ params }) => {
+  throw error(404, {
+    message: 'Not found'
+  });
+
   const query = `
   {
     post (where: {slug: "${params.slug}"}){
@@ -52,3 +57,5 @@ export const load: PageServerLoad = async ({ params }) => {
   post.content = marked.parse(post.content);
   return post;
 };
+
+export const prerender = false;
