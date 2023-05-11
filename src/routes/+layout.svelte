@@ -28,21 +28,46 @@
 			title: 'About'
 		}
 	];
+
+	let navbaropen = false;
 </script>
 
 <div class="flex flex-col min-h-screen">
 	<header
 		class="z-10 sticky top-0 w-full bg-overlay backdrop-filter backdrop-blur-lg bg-opacity-50"
 	>
-		<nav class="px-8 py-4">
-			<ul class="flex direction-row gap-4">
-				{#each links as { href, title }}
-					<li>
-						<a {href}>{title}</a>
-					</li>
-				{/each}
-			</ul>
-		</nav>
+		<div class="hidden md:flex">
+			<nav class="px-8 py-4">
+				<ul class="flex direction-row gap-4">
+					{#each links as { href, title }}
+						<li>
+							<a {href}>{title}</a>
+						</li>
+					{/each}
+				</ul>
+			</nav>
+		</div>
+
+		<div class="flex justify-end md:hidden px-8 py-2 ">
+			<button
+				class="rounded-full hover:bg-muted
+      hover:backdrop-filter hover:backdrop-opacity-40 p-2 transition-colors ease-in-out duration-300"
+				on:click={() => (navbaropen = !navbaropen)}
+			>
+				<Icon name="burger" />
+			</button>
+			{#if navbaropen}
+				<nav class="px-8 py-2" transition:fly={{ x: 1000, duration: transitionSpeed }}>
+					<ul class="flex direction-row gap-4">
+						{#each links as { href, title }}
+							<li>
+								<a {href}>{title}</a>
+							</li>
+						{/each}
+					</ul>
+				</nav>
+			{/if}
+		</div>
 	</header>
 
 	<main class="flex-1 px-10 sm:px-30 md:px-40 lg:px-60 xl:px-80 my-8">
