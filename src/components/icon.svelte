@@ -2,6 +2,7 @@
 	import Github from '../components/Icons/Github.svelte';
 	import LinkedIn from '../components/Icons/LinkedIn.svelte';
 	import Mail from '../components/Icons/Mail.svelte';
+	import Burger from './Icons/Burger.svelte';
 	export let name: string;
 
 	let icons = [
@@ -12,6 +13,10 @@
 		{
 			name: 'mail',
 			svg: Mail
+		},
+		{
+			name: 'burger',
+			svg: Burger
 		},
 		{
 			name: 'linkedin',
