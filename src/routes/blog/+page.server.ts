@@ -1,5 +1,5 @@
-import type { PageServerData } from './$types';
 import { error } from '@sveltejs/kit';
+import type { PageServerLoad } from './$types';
 
 type BlogLink = {
   title: string;
@@ -10,23 +10,23 @@ type BlogLink = {
   date: string;
 };
 
-export const load: PageServerData = async () => {
+export const load = (async () => {
   throw error(404, {
     message: 'Not found'
   });
 
   const query = `
-    query {
-      posts {
-        id,
-        slug,
-        title,
-        date,
-        coverImage {
-          url
-        }
-      },
-    }
+  query {
+    posts {
+      id,
+      slug,
+      title,
+      date,
+      coverImage {
+        url
+      }
+    },
+  }
 `;
 
   const response = await fetch(
@@ -43,6 +43,6 @@ export const load: PageServerData = async () => {
 
   const { data } = await response.json();
   return data as { posts: BlogLink[] };
-};
+}) satisfies PageServerLoad;
 
 export const prerender = false;

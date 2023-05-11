@@ -1,4 +1,4 @@
-import type { PageServerData } from './$types';
+import type { PageServerLoad } from './$types';
 
 type ProjectLink = {
   name: string;
@@ -9,7 +9,7 @@ type ProjectLink = {
   tags: string[];
 };
 
-export const load: PageServerData = async () => {
+export const load: PageServerLoad = async () => {
   const query = `
     query {
       projects {
