@@ -4,6 +4,7 @@
 	import { fly } from 'svelte/transition';
 	import { cubicInOut } from 'svelte/easing';
 	import type { LayoutData } from './$types';
+	import Burger from '../components/Icons/Burger.svelte';
 
 	const transitionSpeed = 300;
 
@@ -48,16 +49,9 @@
 			</nav>
 		</div>
 
-		<div class="flex justify-end md:hidden px-8 py-2 ">
-			<button
-				class="rounded-full hover:bg-muted
-      hover:backdrop-filter hover:backdrop-opacity-40 p-2 transition-colors ease-in-out duration-300"
-				on:click={() => (navbaropen = !navbaropen)}
-			>
-				<Icon name="burger" />
-			</button>
-			{#if navbaropen}
-				<nav class="px-8 py-2" transition:fly={{ x: 1000, duration: transitionSpeed }}>
+		<div class="flex justify-end items-center md:hidden px-8 py-2 ">
+			<Burger>
+				<nav>
 					<ul class="flex direction-row gap-4">
 						{#each links as { href, title }}
 							<li>
@@ -66,7 +60,7 @@
 						{/each}
 					</ul>
 				</nav>
-			{/if}
+			</Burger>
 		</div>
 	</header>
 
