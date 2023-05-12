@@ -62,7 +62,7 @@
 		</div>
 	</header>
 
-	<main class="flex-1 px-10 sm:px-30 md:px-40 lg:px-60 xl:px-80 my-8">
+	<main class="flex-1 px-12 sm:px-20 md:px-40 lg:px-60 xl:px-80 my-8">
 		{#key data.url}
 			<div
 				in:fly={{ duration: transitionSpeed, y: -50, easing: cubicInOut, delay: transitionSpeed }}
