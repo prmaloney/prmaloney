@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { cubicInOut } from 'svelte/easing';
-	import { fly, slide } from 'svelte/transition';
+	import { fly, fade } from 'svelte/transition';
 	let open = false;
 	let onClick = (): void => {
 		open = !open;
@@ -8,25 +8,14 @@
 
 	let ariaLabel = 'toggle menu';
 	let width: string | number = 50;
-
-	const flyWithButton = (node, { duration, x, easing }) => {
-		const style = getComputedStyle(node);
-		const normalFly = fly(node, { duration, x });
-		const initialTransform = style.transform === 'none' ? '' : style.transform;
-		const button = document.getElementsByTagName('button')[0];
-
-		button.style.transform = initialTransform;
-		return normalFly;
-	};
 </script>
 
-<button
-	class="transition-transform ease-in-out
-        duration-300"
-	on:click={onClick}
-	aria-expanded={open}
-	aria-label={ariaLabel}
->
+{#if open}
+	<div class="flex items-center" transition:fly={{ duration: 300, x: -300, easing: cubicInOut }}>
+		<slot />
+	</div>
+{/if}
+<button on:click={onClick} aria-expanded={open} aria-label={ariaLabel}>
 	<svg class:open viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" {width}>
 		<path
 			class="top"
@@ -40,18 +29,9 @@
 	</svg>
 </button>
 
-{#if open}
-	<div transition:flyWithButton={{ duration: 300, x: 50, easing: cubicInOut }}>
-		<slot
-			class="px-8 py-2 absolute translate-x-full transition-transform
-      ease-in-out duration-300"
-		/>
-	</div>
-{/if}
-
 <style>
 	:root {
-		--transition-duration: 400ms;
+		--transition-duration: 300ms;
 	}
 
 	button {

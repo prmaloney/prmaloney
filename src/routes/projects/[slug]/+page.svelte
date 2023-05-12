@@ -16,7 +16,7 @@
 				<span class="tag">{tag}</span>
 			{/each}
 		</div>
-		<a href={data.sourceCode} target="_blank" rel="noreferrer">
+		<a class="text-white" href={data.sourceCode} target="_blank" rel="noreferrer">
 			<Icon name="github" />
 			View Source
 		</a>

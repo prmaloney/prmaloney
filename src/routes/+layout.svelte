@@ -29,8 +29,6 @@
 			title: 'About'
 		}
 	];
-
-	let navbaropen = false;
 </script>
 
 <div class="flex flex-col min-h-screen">
@@ -49,7 +47,7 @@
 			</nav>
 		</div>
 
-		<div class="flex justify-end items-center md:hidden px-8 py-2 ">
+		<div class="flex justify-end items-center md:hidden px-8 py-2">
 			<Burger>
 				<nav>
 					<ul class="flex direction-row gap-4">
