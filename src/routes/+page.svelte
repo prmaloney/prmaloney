@@ -37,14 +37,16 @@
 			systems software in my free time.
 		</p>
 		<h2>My goals</h2>
-		<p>
-			I'm looking for a position where I can work on interesting problems with a team of people who
-			are passionate about what they do.
-		</p>
-		<p>
-			I'm interested in working on projects that have a positive impact on the world. I'm also
-			interested in working on projects that are technically challenging and allow for constant
-			learning.
-		</p>
+		<p>I want to work on a team that:</p>
+		<ul class="list-disc ml-4">
+			<li>Allows for constant learning</li>
+			<li>Stays up-to-date with tools and best practices</li>
+			<li>Listens to as many perspectives as possible</li>
+		</ul>
+		<p>I want to work on projects that:</p>
+		<ul class="list-disc ml-4">
+			<li>Challenge me to learn new things</li>
+			<li>Have a positive impact on the world</li>
+		</ul>
 	</div>
 </div>
