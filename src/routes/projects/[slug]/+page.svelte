@@ -3,7 +3,6 @@
 	import { marked } from 'marked';
 	import Icon from '../../../components/icon.svelte';
 	export let data: PageData;
-	console.log(data);
 
 	const content = marked.parse(data.description);
 </script>
