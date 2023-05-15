@@ -25,7 +25,7 @@
 			<h2 class="after:bg-rose relative max-w-fit {hover === project.name ? 'hover' : ''}">
 				{project.name}
 			</h2>
-			<div class="flex flex-row gap-4">
+			<div class="flex flex-row gap-4 flex-wrap-reverse">
 				{#each project.tags as tag}
 					<span class="text-muted">{tag}</span>
 				{/each}
