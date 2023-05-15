@@ -13,7 +13,7 @@
 		on:focus={() => (hover = project.name)}
 		on:mouseout={() => (hover = null)}
 		on:blur={() => (hover = null)}
-		class="flex flex-row after:content-none gap-4"
+		class="flex flex-row after:content-none gap-4 mb-8"
 		href="/projects/{project.slug}"
 	>
 		<img
