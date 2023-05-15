@@ -3,6 +3,8 @@
 	import LinkedIn from '../components/Icons/LinkedIn.svelte';
 	import Mail from '../components/Icons/Mail.svelte';
 	import Burger from './Icons/Burger.svelte';
+	import Code from './Icons/Code.svelte';
+	import Rocket from './Icons/Rocket.svelte';
 	export let name: string;
 
 	let icons = [
@@ -21,6 +23,14 @@
 		{
 			name: 'linkedin',
 			svg: LinkedIn
+		},
+		{
+			name: 'code',
+			svg: Code
+		},
+		{
+			name: 'rocket',
+			svg: Rocket
 		}
 	];
 
