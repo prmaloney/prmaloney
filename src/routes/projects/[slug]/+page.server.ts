@@ -44,3 +44,5 @@ export const load = (async ({ params }) => {
   const { data } = await response.json();
   return data.projects[0] as Project;
 }) satisfies PageServerLoad;
+
+export const prerender = true;
