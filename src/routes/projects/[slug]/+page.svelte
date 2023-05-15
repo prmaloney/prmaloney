@@ -19,7 +19,10 @@
 	<div class="flex gap-2">
 		<a
 			class="flex items-center text-white max-w-fit pr-4 pl-2 bg-love
-      after:content-none {data.sourceCode ? '' : 'opacity-50 cursor-not-allowed'}}"
+      after:content-none {data.sourceCode
+				? 'hover:scale-105 transition ease-in-out duration-300'
+				: 'opacity-50 cursor-not-allowed'} 
+      "
 			href={data.sourceCode}
 			target="_blank"
 			rel="noreferrer"
@@ -29,7 +32,10 @@
 		</a>
 		<a
 			class="flex items-center text-white max-w-fit pr-4 pl-2 bg-pine
-      after:content-none {data.demo ? '' : 'opacity-50 cursor-not-allowed'}"
+      after:content-none {data.demo
+				? 'hover:scale-105 transition ease-in-out duration-300'
+				: 'opacity-50 cursor-not-allowed'}
+      "
 			href={data.demo}
 			target="_blank"
 			rel="noreferrer"
