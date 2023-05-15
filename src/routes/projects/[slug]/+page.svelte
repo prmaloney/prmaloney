@@ -16,7 +16,8 @@
 		{/each}
 	</div>
 	<a
-		class="flex items-center text-white max-w-fit pr-4 pl-2 bg-love"
+		class="flex items-center text-white max-w-fit pr-4 pl-2 bg-love
+    after:content-none "
 		href={data.sourceCode}
 		target="_blank"
 		rel="noreferrer"
