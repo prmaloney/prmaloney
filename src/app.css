@@ -29,6 +29,7 @@
 		@apply text-2xl;
 		@apply font-bold;
 		@apply text-iris;
+		@apply my-4;
 	}
 
 	strong {
