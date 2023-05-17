@@ -5,6 +5,7 @@
 	import Burger from './Icons/Burger.svelte';
 	import Code from './Icons/Code.svelte';
 	import Rocket from './Icons/Rocket.svelte';
+	import ChevronDown from './Icons/ChevronDown.svelte';
 	export let name: string;
 
 	let icons = [
@@ -27,6 +28,10 @@
 		{
 			name: 'code',
 			svg: Code
+		},
+		{
+			name: 'chevron-down',
+			svg: ChevronDown
 		},
 		{
 			name: 'rocket',

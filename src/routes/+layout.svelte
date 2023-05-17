@@ -5,11 +5,13 @@
 	import { cubicInOut } from 'svelte/easing';
 	import type { LayoutData } from './$types';
 	import Burger from '../components/Icons/Burger.svelte';
+	import LanguagePicker from '../components/LanguagePicker.svelte';
 
 	const transitionSpeed = 300;
 
 	export let data: LayoutData;
 
+	let locale = 'en';
 	const links = [
 		{
 			href: '/',
@@ -43,6 +45,7 @@
 							<a {href}>{title}</a>
 						</li>
 					{/each}
+					<LanguagePicker {locale} onSelect={(item) => (locale = item)} />
 				</ul>
 			</nav>
 		</div>
@@ -56,6 +59,7 @@
 								<a {href}>{title}</a>
 							</li>
 						{/each}
+						<LanguagePicker {locale} onSelect={(item) => (locale = item)} />
 					</ul>
 				</nav>
 			</Burger>
