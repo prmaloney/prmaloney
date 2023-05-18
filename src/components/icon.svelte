@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Github from '../components/Icons/Github.svelte';
-	import LinkedIn from '../components/Icons/LinkedIn.svelte';
-	import Mail from '../components/Icons/Mail.svelte';
+	import Github from './Icons/Github.svelte';
+	import LinkedIn from './Icons/LinkedIn.svelte';
+	import Mail from './Icons/Mail.svelte';
 	import Burger from './Icons/Burger.svelte';
 	import Code from './Icons/Code.svelte';
 	import Rocket from './Icons/Rocket.svelte';
