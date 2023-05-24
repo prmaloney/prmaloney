@@ -1,13 +1,17 @@
 {
-	"nav": {
-		"home": "Home",
-		"projects": "Projects",
-		"about": "About"
-	},
-	"projects": {
-		"title": "Projects"
-	},
-	"about": {
-		"title": "About"
-	}
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About"
+  },
+  "projects": {
+    "title": "Projects"
+  },
+  "about": {
+    "title": "About"
+  },
+  "project": {
+    "viewSource": "View Source",
+    "viewDemo": "View Demo"
+  }
 }

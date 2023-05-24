@@ -1,13 +1,17 @@
 {
-	"nav": {
-		"home": "Startseite",
-		"projects": "Projekte",
-		"about": "Über diese Seite"
-	},
-	"projects": {
-		"title": "Projekte"
-	},
-	"about": {
-		"title": "Über diese Seite"
-	}
+  "nav": {
+    "home": "Startseite",
+    "projects": "Projekte",
+    "about": "Über diese Seite"
+  },
+  "projects": {
+    "title": "Projekte"
+  },
+  "about": {
+    "title": "Über diese Seite"
+  },
+  "project": {
+    "viewSource": "Quellcode Anzeigen",
+    "viewDemo": "Demo Anzeigen"
+  }
 }

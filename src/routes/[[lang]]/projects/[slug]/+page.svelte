@@ -1,7 +1,8 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { marked } from 'marked';
-	import Icon from '../../../components/icon.svelte';
+	import { _ } from 'svelte-i18n';
+	import Icon from '$components/icon.svelte';
 	export let data: PageData;
 
 	const content = marked.parse(data.description);
@@ -27,7 +28,7 @@
 			rel="noreferrer"
 		>
 			<Icon name="code" />
-			View Source
+			{$_('project.viewSource')}
 		</a>
 		<a
 			class="flex items-center text-white max-w-fit pr-4 pl-2 bg-pine
@@ -40,7 +41,7 @@
 			rel="noreferrer"
 		>
 			<Icon name="rocket" />
-			View Demo
+			{$_('project.viewDemo')}
 		</a>
 	</div>
 </div>
