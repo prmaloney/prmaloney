@@ -1,3 +1,5 @@
+import { locale } from 'svelte-i18n';
+import { get } from 'svelte/store';
 import type { PageServerLoad } from './$types';
 
 type Homepage = {
@@ -7,7 +9,7 @@ type Homepage = {
 export const load = (async () => {
 	const query = `
     query {
-      homepages(locales: [en]) {
+      homepages(locales: [${get(locale)}]) {
         content
       }
     }
