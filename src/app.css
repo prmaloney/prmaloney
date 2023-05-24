@@ -23,6 +23,7 @@
 		@apply text-4xl;
 		@apply font-bold;
 		@apply text-rose;
+		@apply my-4;
 	}
 
 	h3 {
@@ -39,6 +40,11 @@
 	a {
 		@apply text-foam;
 		position: relative;
+	}
+
+	ul {
+		@apply list-disc;
+		margin-left: 2rem;
 	}
 
 	a:after {

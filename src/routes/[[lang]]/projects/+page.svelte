@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import type { PageData } from './$types';
 	import { _ } from 'svelte-i18n';
 	export let data: PageData;
@@ -16,7 +17,7 @@
 			on:mouseout={() => (hover = null)}
 			on:blur={() => (hover = null)}
 			class="flex flex-row after:content-none gap-4"
-			href="/projects/{project.slug}"
+			href="{'/' + $page.params.lang || ''}/projects/{project.slug}"
 		>
 			<img
 				class="w-32 h-32 md:w-52 md:h-52 object-contain"

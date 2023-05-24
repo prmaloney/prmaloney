@@ -1,46 +1,49 @@
 <script lang="ts">
 	import '../../app.css';
+	import '$lib/i18n';
 	import Icon from '$components/icon.svelte';
+	import { page } from '$app/stores';
 	import { fly } from 'svelte/transition';
 	import { cubicInOut } from 'svelte/easing';
 	import type { LayoutData } from './$types';
 	import Burger from '$components/Icons/Burger.svelte';
-	import { _, locale } from 'svelte-i18n';
+	import { _, locale, locales } from 'svelte-i18n';
+	import { goto } from '$app/navigation';
 
 	const transitionSpeed = 300;
 
 	export let data: LayoutData;
 
-	let links = [
-		{
-			href: '/',
-			titleKey: 'nav.home'
-		},
-		// blog is not available for now
-		// {
-		// 	href: '/blog',
-		// 	titleKey: 'Blog'
-		// },
-		{
-			href: '/projects',
-			titleKey: 'nav.projects'
-		},
-		{
-			href: '/about',
-			titleKey: 'nav.about'
-		}
-	];
+	function getLinks(lang: string | undefined) {
+		const prefix = lang ? `/${lang}` : '';
+		return [
+			{
+				href: prefix + '/',
+				titleKey: 'nav.home'
+			},
+			// blog is not available for now
+			// {
+			// 	href: '/blog',
+			// 	titleKey: 'Blog'
+			// },
+			{
+				href: prefix + '/projects',
+				titleKey: 'nav.projects'
+			},
+			{
+				href: prefix + '/about',
+				titleKey: 'nav.about'
+			}
+		];
+	}
 
-	const changeLocale = async () => {
-		const newLocale = $locale === 'en' ? 'de' : 'en';
-		await fetch('/api/locale', {
-			method: 'POST',
-			body: JSON.stringify({
-				locale: newLocale
-			})
-		});
-		$locale = newLocale;
-	};
+	let links = getLinks($page.params.lang);
+
+	function onLocaleChange(option: Event & { currentTarget: HTMLSelectElement }) {
+		$locale = option.currentTarget.value;
+		links = getLinks(option.currentTarget.value || undefined);
+		goto(`/${option.currentTarget.value}`);
+	}
 </script>
 
 <div class="flex flex-col min-h-screen">
@@ -49,13 +52,21 @@
 	>
 		<div class="hidden md:flex">
 			<nav class="px-8 py-4">
-				<ul class="flex direction-row gap-4">
+				<ul class="flex direction-row gap-4 list-none ml-0">
 					{#each links as { href, titleKey }}
 						<li>
 							<a {href}>{$_(titleKey)}</a>
 						</li>
 					{/each}
-					<button on:click={changeLocale}>change locale</button>
+					<select
+						class="bg-[rgb(0,0,0,0)] text-foam"
+						on:change={onLocaleChange}
+						bind:value={$locale}
+					>
+						{#each $locales as lang}
+							<option value={lang}>{lang}</option>
+						{/each}
+					</select>
 				</ul>
 			</nav>
 		</div>
@@ -63,7 +74,7 @@
 		<div class="flex justify-end items-center md:hidden px-8 py-2">
 			<Burger>
 				<nav>
-					<ul class="flex direction-row gap-4">
+					<ul class="flex direction-row gap-4 list-none ml-0">
 						{#each links as { href, titleKey }}
 							<li>
 								<a {href}>{$_(titleKey)}</a>
