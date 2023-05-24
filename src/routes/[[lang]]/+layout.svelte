@@ -1,34 +1,46 @@
 <script lang="ts">
-	import '../app.css';
-	import Icon from '../components/icon.svelte';
+	import '../../app.css';
+	import Icon from '$components/icon.svelte';
 	import { fly } from 'svelte/transition';
 	import { cubicInOut } from 'svelte/easing';
 	import type { LayoutData } from './$types';
-	import Burger from '../components/Icons/Burger.svelte';
+	import Burger from '$components/Icons/Burger.svelte';
+	import { _, locale } from 'svelte-i18n';
 
 	const transitionSpeed = 300;
 
 	export let data: LayoutData;
 
-	const links = [
+	let links = [
 		{
 			href: '/',
-			title: 'Home'
+			titleKey: 'nav.home'
 		},
 		// blog is not available for now
 		// {
 		// 	href: '/blog',
-		// 	title: 'Blog'
+		// 	titleKey: 'Blog'
 		// },
 		{
 			href: '/projects',
-			title: 'Projects'
+			titleKey: 'nav.projects'
 		},
 		{
 			href: '/about',
-			title: 'About'
+			titleKey: 'nav.about'
 		}
 	];
+
+	const changeLocale = async () => {
+		const newLocale = $locale === 'en' ? 'de' : 'en';
+		await fetch('/api/locale', {
+			method: 'POST',
+			body: JSON.stringify({
+				locale: newLocale
+			})
+		});
+		$locale = newLocale;
+	};
 </script>
 
 <div class="flex flex-col min-h-screen">
@@ -38,11 +50,12 @@
 		<div class="hidden md:flex">
 			<nav class="px-8 py-4">
 				<ul class="flex direction-row gap-4">
-					{#each links as { href, title }}
+					{#each links as { href, titleKey }}
 						<li>
-							<a {href}>{title}</a>
+							<a {href}>{$_(titleKey)}</a>
 						</li>
 					{/each}
+					<button on:click={changeLocale}>change locale</button>
 				</ul>
 			</nav>
 		</div>
@@ -51,9 +64,9 @@
 			<Burger>
 				<nav>
 					<ul class="flex direction-row gap-4">
-						{#each links as { href, title }}
+						{#each links as { href, titleKey }}
 							<li>
-								<a {href}>{title}</a>
+								<a {href}>{$_(titleKey)}</a>
 							</li>
 						{/each}
 					</ul>

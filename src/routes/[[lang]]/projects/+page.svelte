@@ -1,11 +1,12 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import { _ } from 'svelte-i18n';
 	export let data: PageData;
 
 	let hover: string | null = null;
 </script>
 
-<h1>Projects</h1>
+<h1>{$_('projects.title')}</h1>
 
 <div class="grid gap-16 grid-cols-1 2xl:grid-cols-2">
 	{#each data.projects as project}
