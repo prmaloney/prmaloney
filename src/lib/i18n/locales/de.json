@@ -1,0 +1,13 @@
+{
+	"nav": {
+		"home": "Startseite",
+		"projects": "Projekte",
+		"about": "Über diese Seite"
+	},
+	"projects": {
+		"title": "Projekte"
+	},
+	"about": {
+		"title": "Über diese Seite"
+	}
+}
