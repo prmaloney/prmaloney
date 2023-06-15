@@ -3,16 +3,17 @@
 	import '$lib/i18n';
 	import Icon from '$components/icon.svelte';
 	import { page } from '$app/stores';
-	import { fly } from 'svelte/transition';
+	import { fly, slide } from 'svelte/transition';
 	import { cubicInOut } from 'svelte/easing';
-	import type { LayoutData } from './$types';
+	import type { LayoutServerData } from './$types';
 	import Burger from '$components/Icons/Burger.svelte';
 	import { _, locale, locales } from 'svelte-i18n';
 	import { goto } from '$app/navigation';
+	import LanguageSwitcher from '$components/LanguageSwitcher.svelte';
 
 	const transitionSpeed = 300;
 
-	export let data: LayoutData;
+	export let data: LayoutServerData;
 
 	function getLinks(lang: string | undefined) {
 		const prefix = lang ? `/${lang}` : '';
@@ -39,10 +40,16 @@
 
 	let links = getLinks($page.params.lang);
 
-	function onLocaleChange(option: Event & { currentTarget: HTMLSelectElement }) {
-		$locale = option.currentTarget.value;
-		links = getLinks(option.currentTarget.value || undefined);
-		goto(`/${option.currentTarget.value}`);
+	function onLocaleChange(lang: string) {
+		const oldLocale = $page.params.lang;
+		$locale = lang;
+		links = getLinks(lang || undefined);
+		const newUrl = oldLocale
+			? $page.url.pathname.replace(`/${oldLocale}`, `/${lang}`)
+			: `/${lang}${$page.url.pathname}`;
+		console.log($page.url.pathname);
+		console.log(newUrl);
+		goto(newUrl);
 	}
 </script>
 
@@ -58,15 +65,7 @@
 							<a {href}>{$_(titleKey)}</a>
 						</li>
 					{/each}
-					<select
-						class="bg-[rgb(0,0,0,0)] text-foam"
-						on:change={onLocaleChange}
-						bind:value={$locale}
-					>
-						{#each $locales as lang}
-							<option value={lang}>{lang}</option>
-						{/each}
-					</select>
+					<LanguageSwitcher onSelect={onLocaleChange} langs={$locales} />
 				</ul>
 			</nav>
 		</div>
@@ -87,14 +86,7 @@
 	</header>
 
 	<main class="flex-1 px-12 sm:px-20 md:px-40 lg:px-60 xl:px-80 my-8">
-		{#key data.url}
-			<div
-				in:fly={{ duration: transitionSpeed, y: -50, easing: cubicInOut, delay: transitionSpeed }}
-				out:fly={{ duration: transitionSpeed, y: -50 }}
-			>
-				<slot />
-			</div>
-		{/key}
+		<slot />
 	</main>
 	<footer class="w-full bg-surface flex flex-col items-center px-8 py-4">
 		<div class="flex gap-4 items-center mb-1">

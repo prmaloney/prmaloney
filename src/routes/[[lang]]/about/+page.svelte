@@ -1,8 +1,15 @@
 <script>
 	import { _ } from 'svelte-i18n';
+	import { page } from '$app/stores';
+
+	const portfolioUrl = $page.params.lang
+		? `/${$page.params.lang}/projects/portfolio`
+		: '/projects/portfolio';
 </script>
 
 <h1>{$_('about.title')}</h1>
 
-<p>Thanks for visiting my portfolio!</p>
-<p>Take a look at the project description for this site <a href="/projects/portfolio">here</a>.</p>
+<p>{$_('about.thanks')}</p>
+{@html $_('about.takeALook', {
+	values: { portfolioUrl }
+})}

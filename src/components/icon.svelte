@@ -3,6 +3,7 @@
 	import LinkedIn from '../components/Icons/LinkedIn.svelte';
 	import Mail from '../components/Icons/Mail.svelte';
 	import Burger from './Icons/Burger.svelte';
+	import Chevron from './Icons/Chevron.svelte';
 	import Code from './Icons/Code.svelte';
 	import Rocket from './Icons/Rocket.svelte';
 	export let name: string;
@@ -27,6 +28,10 @@
 		{
 			name: 'code',
 			svg: Code
+		},
+		{
+			name: 'chevron',
+			svg: Chevron
 		},
 		{
 			name: 'rocket',

@@ -4,7 +4,7 @@
 
 	export let data: PageData;
 
-	const content = marked(data.content);
+	$: content = marked(data.content);
 </script>
 
 <div class="flex flex-col items-center justify-center md:justify-start">

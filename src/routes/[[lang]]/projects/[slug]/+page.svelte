@@ -5,7 +5,7 @@
 	import Icon from '$components/icon.svelte';
 	export let data: PageData;
 
-	const content = marked.parse(data.description);
+	$: content = marked.parse(data.description);
 </script>
 
 <div class="flex flex-col items-center gap-4 mb-8 md:items-start">
