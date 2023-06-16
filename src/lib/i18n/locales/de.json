@@ -1,22 +1,22 @@
 {
-  "nav": {
-    "home": "Startseite",
-    "projects": "Projekte",
-    "about": "Über diese Seite"
-  },
-  "footer": {
-    "contact": "Kontaktiere mich:"
-  },
-  "projects": {
-    "title": "Projekte"
-  },
-  "about": {
-    "title": "Über diese Seite",
-    "thanks": "Danke für mein Portfolioseite zu besuchen!",
-    "takeALook": "Sie können die Beschreibung dieser Seite <a href=\"{portfolioUrl}\">hier finden</a>."
-  },
-  "project": {
-    "viewSource": "Quellcode Anzeigen",
-    "viewDemo": "Demo Anzeigen"
-  }
+	"nav": {
+		"home": "Startseite",
+		"projects": "Projekte",
+		"about": "Über diese Seite"
+	},
+	"footer": {
+		"contact": "Lass uns reden:"
+	},
+	"projects": {
+		"title": "Projekte"
+	},
+	"about": {
+		"title": "Über diese Seite",
+		"thanks": "Danke für mein Portfolioseite zu besuchen!",
+		"takeALook": "Sie können die Beschreibung dieser Seite <a href=\"{portfolioUrl}\">hier finden</a>."
+	},
+	"project": {
+		"viewSource": "Quellcode Anzeigen",
+		"viewDemo": "Demo Anzeigen"
+	}
 }
