@@ -3,17 +3,10 @@
 	import '$lib/i18n';
 	import Icon from '$components/icon.svelte';
 	import { page } from '$app/stores';
-	import { fly, slide } from 'svelte/transition';
-	import { cubicInOut } from 'svelte/easing';
-	import type { LayoutServerData } from './$types';
 	import Burger from '$components/Icons/Burger.svelte';
 	import { _, locale, locales } from 'svelte-i18n';
 	import { goto } from '$app/navigation';
 	import LanguageSwitcher from '$components/LanguageSwitcher.svelte';
-
-	const transitionSpeed = 300;
-
-	export let data: LayoutServerData;
 
 	function getLinks(lang: string | undefined) {
 		const prefix = lang ? `/${lang}` : '';
@@ -47,8 +40,6 @@
 		const newUrl = oldLocale
 			? $page.url.pathname.replace(`/${oldLocale}`, `/${lang}`)
 			: `/${lang}${$page.url.pathname}`;
-		console.log($page.url.pathname);
-		console.log(newUrl);
 		goto(newUrl);
 	}
 </script>
