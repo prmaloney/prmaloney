@@ -1,19 +1,22 @@
 {
-	"nav": {
-		"home": "Home",
-		"projects": "Projects",
-		"about": "About"
-	},
-	"projects": {
-		"title": "Projects"
-	},
-	"about": {
-		"title": "About",
-		"thanks": "Thanks for vititing my portfolio!",
-		"takeALook": "Take a look at the project description for this site <a href=\"{portfolioUrl}\">here<a>."
-	},
-	"project": {
-		"viewSource": "View Source",
-		"viewDemo": "View Demo"
-	}
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About"
+  },
+  "footer": {
+    "contact": "Let's get in contact:"
+  },
+  "projects": {
+    "title": "Projects"
+  },
+  "about": {
+    "title": "About",
+    "thanks": "Thanks for vititing my portfolio!",
+    "takeALook": "Take a look at the project description for this site <a href=\"{portfolioUrl}\">here<a>."
+  },
+  "project": {
+    "viewSource": "View Source",
+    "viewDemo": "View Demo"
+  }
 }

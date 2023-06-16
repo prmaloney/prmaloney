@@ -81,7 +81,7 @@
 	</main>
 	<footer class="w-full bg-surface flex flex-col items-center px-8 py-4">
 		<div class="flex gap-4 items-center mb-1">
-			<h3>Let's get in contact:</h3>
+			<h3>{$_('footer.contact')}</h3>
 			<a
 				class="after:content-none bg-love hover:scale-110 transition ease-in-out duration-300"
 				href="https://github.com/prmaloney"
