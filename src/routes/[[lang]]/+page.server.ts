@@ -6,7 +6,7 @@ type Homepage = {
 	content: string;
 };
 
-export const load = (async ({ params }) => {
+export const load = (async ({ params, fetch }) => {
 	const query = `
     query {
       homepages(locales: [${params.lang || get(locale)}]) {
@@ -30,5 +30,3 @@ export const load = (async ({ params }) => {
 	const { data } = await response.json();
 	return data.homepages[0] as Homepage;
 }) satisfies PageServerLoad;
-
-export const prerender = true;

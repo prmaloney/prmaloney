@@ -14,7 +14,7 @@ type Project = {
 	demo: string;
 };
 
-export const load = (async ({ params }) => {
+export const load = (async ({ params, fetch }) => {
 	const query = `
     query {
       projects(where: {slug: "${params.slug}"}, locales: [${params.lang || get(locale)}, en]) {
@@ -44,7 +44,6 @@ export const load = (async ({ params }) => {
 	);
 
 	const { data } = await response.json();
-	console.log(data);
 	return data.projects[0] as Project;
 }) satisfies PageServerLoad;
 
