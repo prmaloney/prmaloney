@@ -7,15 +7,13 @@ type Homepage = {
 };
 
 export const load = (async ({ params, fetch }) => {
-	console.log(params)
 	const query = `
-    query {
-      homepages(locales: [${params.lang || get(locale)}]) {
-        content
-      }
-    }
+	    query {
+	      homepages(locales: [${params.lang || get(locale)}]) {
+		content
+	      }
+	    }
 `;
-	console.log(query);
 
 	const response = await fetch(
 		'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clewz07ae009k01uh2q733tz4/master',
