@@ -100,6 +100,15 @@
 				<Icon name="linkedin" />
 			</a>
 			<a
+				class="after:content-none bg-pine hover:scale-110 transition
+          ease-in-out duration-300"
+				href="https://twitter.com/prmaloney_dev"
+				target="_blank"
+				rel="noreferrer"
+			>
+				<Icon name="twitter" />
+			</a>
+			<a
 				class="after:content-none bg-iris hover:scale-110 transition
           ease-in-out duration-300"
 				href="mailto:pmaloney16@gmail.com"

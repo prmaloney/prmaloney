@@ -8,7 +8,8 @@ export const load: LayoutLoad = async ({ params }) => {
   if (params?.lang) {
     locale.set(params.lang);
   } else if (browser) {
-    locale.set(window.navigator.language);
+    console.log('setting locale', window.navigator)
+    locale.set(window.navigator.language.split('-')[0]);
   }
   await waitLocale();
 };

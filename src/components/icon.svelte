@@ -6,6 +6,7 @@
 	import Chevron from './Icons/Chevron.svelte';
 	import Code from './Icons/Code.svelte';
 	import Rocket from './Icons/Rocket.svelte';
+	import Twitter from './Icons/Twitter.svelte';
 	export let name: string;
 
 	let icons = [
@@ -36,6 +37,10 @@
 		{
 			name: 'rocket',
 			svg: Rocket
+		},
+		{
+			name: 'twitter',
+			svg: Twitter
 		}
 	];
 
