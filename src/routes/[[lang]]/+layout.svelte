@@ -44,10 +44,10 @@
 	}
 </script>
 
-    <svelte:head>
-        <title>{$_('meta.title')}</title>
-        <meta name="description" content={$_('meta.description')} />
-    </svelte:head>
+<svelte:head>
+	<title>{$_('meta.title')}</title>
+	<meta name="description" content={$_('meta.description')} />
+</svelte:head>
 
 <div class="flex flex-col min-h-screen">
 	<header
@@ -92,6 +92,7 @@
 				href="https://github.com/prmaloney"
 				target="_blank"
 				rel="noreferrer"
+				aria-label="github"
 			>
 				<Icon name="github" />
 			</a>
@@ -101,6 +102,7 @@
 				href="https://linkedin.com/in/prmaloney"
 				target="_blank"
 				rel="noreferrer"
+				aria-label="linkedin"
 			>
 				<Icon name="linkedin" />
 			</a>
@@ -110,6 +112,7 @@
 				href="https://twitter.com/prmaloney_dev"
 				target="_blank"
 				rel="noreferrer"
+				aria-label="twitter"
 			>
 				<Icon name="twitter" />
 			</a>
@@ -119,10 +122,17 @@
 				href="mailto:pmaloney16@gmail.com"
 				target="_blank"
 				rel="noreferrer"
+				aria-label="mail"
 			>
 				<Icon name="mail" />
 			</a>
 		</div>
-		<span class="text-sm text-muted">© 2024 Patrick Maloney</span>
+		<span class="text-sm text-gray">© 2024 Patrick Maloney</span>
 	</footer>
 </div>
+
+<style>
+	:global(body) {
+        font-family: 'League Spartan', sans-serif;
+	}
+</style>
