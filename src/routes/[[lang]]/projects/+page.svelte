@@ -37,7 +37,7 @@
 					</h2>
 					<div class="flex flex-row gap-4 flex-wrap">
 						{#each project.tags as tag}
-							<span class="text-muted">{tag}</span>
+							<span class="text-foam">{tag}</span>
 						{/each}
 					</div>
 				</div>
