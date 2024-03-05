@@ -44,6 +44,11 @@
 	}
 </script>
 
+    <svelte:head>
+        <title>{$_('meta.title')}</title>
+        <meta name="description" content={$_('meta.description')} />
+    </svelte:head>
+
 <div class="flex flex-col min-h-screen">
 	<header
 		class="z-10 sticky top-0 w-full bg-overlay backdrop-filter backdrop-blur-lg bg-opacity-50"
@@ -118,6 +123,6 @@
 				<Icon name="mail" />
 			</a>
 		</div>
-		<span class="text-sm text-muted">© 2023 Patrick Maloney</span>
+		<span class="text-sm text-muted">© 2024 Patrick Maloney</span>
 	</footer>
 </div>

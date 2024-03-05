@@ -1,5 +1,3 @@
-import { browser } from "$app/environment";
-
 export const defaultLocale = 'en';
 
 const enLocales = [
@@ -31,7 +29,6 @@ const deLocales = [
 ];
 
 export function getEnOrDeLocale(locale: string): string | undefined {
-	console.log('utils in browser:', browser);
 	if (enLocales.includes(locale)) return 'en';
 	else if (deLocales.includes(locale)) return 'de';
 	return undefined;

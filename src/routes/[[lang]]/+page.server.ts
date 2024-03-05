@@ -28,6 +28,5 @@ export const load = (async ({ params, fetch }) => {
 	);
 
 	const { data } = await response.json();
-	console.log(data)
 	return data.homepages[0] as Homepage;
 }) satisfies PageServerLoad;
