@@ -6,7 +6,7 @@
     export let onLocaleChange: (lang: string) => void;
 </script>
 
-<nav class="px-8 py-4">
+<nav class="px-8 py-2">
 	<ul class="flex direction-row gap-4 list-none ml-0">
 		{#each links as { href, titleKey }}
 			<li>

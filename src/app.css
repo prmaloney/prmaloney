@@ -14,7 +14,7 @@
 
 	h1 {
 		@apply text-6xl;
-		@apply mb-4;
+		@apply mb-8;
 		@apply font-bold;
 		@apply text-gold;
 	}
@@ -23,7 +23,9 @@
 		@apply text-4xl;
 		@apply font-bold;
 		@apply text-rose;
-		@apply my-4;
+		@apply mb-8;
+		@apply mt-12;
+
 	}
 
 	h3 {
