@@ -7,6 +7,7 @@
 	import { _, locale, locales } from 'svelte-i18n';
 	import { goto } from '$app/navigation';
 	import LanguageSwitcher from '$components/LanguageSwitcher.svelte';
+	import HeaderItems from '$components/HeaderItems.svelte';
 
 	function getLinks(lang: string | undefined) {
 		const prefix = lang ? `/${lang}` : '';
@@ -15,11 +16,6 @@
 				href: prefix + '/',
 				titleKey: 'nav.home'
 			},
-			// blog is not available for now
-			// {
-			// 	href: '/blog',
-			// 	titleKey: 'Blog'
-			// },
 			{
 				href: prefix + '/projects',
 				titleKey: 'nav.projects'
@@ -54,29 +50,12 @@
 		class="z-10 sticky top-0 w-full bg-overlay backdrop-filter backdrop-blur-lg bg-opacity-50"
 	>
 		<div class="hidden md:flex">
-			<nav class="px-8 py-4">
-				<ul class="flex direction-row gap-4 list-none ml-0">
-					{#each links as { href, titleKey }}
-						<li>
-							<a {href}>{$_(titleKey)}</a>
-						</li>
-					{/each}
-					<LanguageSwitcher onSelect={onLocaleChange} langs={$locales} />
-				</ul>
-			</nav>
+			<HeaderItems {links} {onLocaleChange} />
 		</div>
 
 		<div class="flex justify-end items-center md:hidden px-8 py-2">
 			<Burger>
-				<nav>
-					<ul class="flex direction-row gap-4 list-none ml-0">
-						{#each links as { href, titleKey }}
-							<li>
-								<a {href}>{$_(titleKey)}</a>
-							</li>
-						{/each}
-					</ul>
-				</nav>
+				<HeaderItems {links} {onLocaleChange} />
 			</Burger>
 		</div>
 	</header>
@@ -133,6 +112,6 @@
 
 <style>
 	:global(body) {
-        font-family: 'League Spartan', sans-serif;
+		font-family: 'League Spartan', sans-serif;
 	}
 </style>
