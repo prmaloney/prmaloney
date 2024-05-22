@@ -6,7 +6,6 @@
 	import Burger from '$components/Icons/Burger.svelte';
 	import { _, locale, locales } from 'svelte-i18n';
 	import { goto } from '$app/navigation';
-	import LanguageSwitcher from '$components/LanguageSwitcher.svelte';
 	import HeaderItems from '$components/HeaderItems.svelte';
 
 	function getLinks(lang: string | undefined) {
@@ -47,7 +46,7 @@
 
 <div class="flex flex-col min-h-screen">
 	<header
-		class="z-10 sticky top-0 w-full bg-overlay backdrop-filter backdrop-blur-lg bg-opacity-50"
+		class="z-10 sticky top-0 w-full bg-overlay backdrop-filter backdrop-blur-[8px] bg-opacity-50 py-4"
 	>
 		<div class="hidden md:flex">
 			<HeaderItems {links} {onLocaleChange} />
