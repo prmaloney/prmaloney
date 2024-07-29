@@ -4,6 +4,10 @@
     "projects": "Projects",
     "about": "About"
   },
+  "meta": {
+    "title": "prmaloney",
+    "description": "Patrick Maloney's portfolio site."
+  },
   "footer": {
     "contact": "Let's get in contact:"
   },
