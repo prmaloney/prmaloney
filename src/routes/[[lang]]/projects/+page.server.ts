@@ -13,7 +13,7 @@ type ProjectLink = {
 export const load: PageServerLoad = async ({ fetch }) => {
     const query = `
     query {
-      projects {
+      projects(orderBy: createdAt_DESC) {
         id,
         slug,
         name,
@@ -25,17 +25,14 @@ export const load: PageServerLoad = async ({ fetch }) => {
     }
 `;
 
-    const response = await fetch(
-        HYGRAPH_URL,
-        {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                Accept: 'application/json'
-            },
-            body: JSON.stringify({ query })
-        }
-    );
+    const response = await fetch(HYGRAPH_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+        },
+        body: JSON.stringify({ query })
+    });
 
     const { data } = await response.json();
     return data as { projects: ProjectLink[] };
