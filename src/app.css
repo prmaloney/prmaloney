@@ -5,64 +5,63 @@
 @tailwind utilities;
 
 @layer base {
-	body {
-		@apply bg-base;
-		@apply text-white;
-		@apply text-xl;
-		@apply font-league-spartan;
-	}
+    body {
+        @apply bg-base;
+        @apply text-white;
+        @apply text-xl;
+        @apply font-league-spartan;
+    }
 
-	h1 {
-		@apply text-6xl;
-		@apply mb-8;
-		@apply font-bold;
-		@apply text-gold;
-	}
+    h1 {
+        @apply text-6xl;
+        @apply mb-8;
+        @apply font-bold;
+        @apply text-gold;
+    }
 
-	h2 {
-		@apply text-4xl;
-		@apply font-bold;
-		@apply text-rose;
-		@apply mb-8;
-		@apply mt-12;
+    h2 {
+        @apply text-4xl;
+        @apply font-bold;
+        @apply text-rose;
+        @apply mb-8;
+        @apply mt-12;
+    }
 
-	}
+    h3 {
+        @apply text-2xl;
+        @apply font-bold;
+        @apply text-iris;
+        @apply my-4;
+    }
 
-	h3 {
-		@apply text-2xl;
-		@apply font-bold;
-		@apply text-iris;
-		@apply my-4;
-	}
+    strong {
+        @apply text-iris;
+    }
 
-	strong {
-		@apply text-iris;
-	}
+    a {
+        @apply text-foam;
+        position: relative;
+    }
 
-	a {
-		@apply text-foam;
-		position: relative;
-	}
+    ul {
+        @apply list-disc;
+        margin-left: 2rem;
+    }
 
-	ul {
-		@apply list-disc;
-		margin-left: 2rem;
-	}
+    a:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        transform-origin: bottom left;
+        transition: transform 0.25s ease-out;
+        @apply bg-foam;
+    }
 
-	a:after {
-		content: '';
-		position: absolute;
-		width: 100%;
-		transform: scaleX(0);
-		height: 2px;
-		bottom: 0;
-		left: 0;
-		transform-origin: bottom left;
-		transition: transform 0.25s ease-out;
-		@apply bg-foam;
-	}
-
-	a:hover::after {
-		transform: scaleX(1);
-	}
+    a:hover::after {
+        transform: scaleX(1);
+    }
 }
