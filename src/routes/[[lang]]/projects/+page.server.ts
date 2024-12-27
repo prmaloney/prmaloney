@@ -1,4 +1,5 @@
 import type { PageServerLoad } from './$types';
+import { HYGRAPH_URL } from '$env/static/private';
 
 type ProjectLink = {
     name: string;
@@ -25,7 +26,7 @@ export const load: PageServerLoad = async ({ fetch }) => {
 `;
 
     const response = await fetch(
-        'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clewz07ae009k01uh2q733tz4/master',
+        HYGRAPH_URL,
         {
             method: 'POST',
             headers: {
