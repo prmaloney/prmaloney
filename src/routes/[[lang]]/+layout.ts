@@ -6,10 +6,10 @@ import type { LayoutLoad } from './$types';
 import { defaultLocale, getEnOrDeLocale } from '$lib/i18n/utils';
 
 export const load: LayoutLoad = async ({ params }) => {
-  if (params?.lang) {
-    locale.set(params.lang);
-  } else if (browser) {
-    locale.set(getEnOrDeLocale(window.navigator.language) || defaultLocale);
-  }
-  await waitLocale();
+    if (params?.lang) {
+        locale.set(params.lang);
+    } else if (browser) {
+        locale.set(getEnOrDeLocale(window.navigator.language) || defaultLocale);
+    }
+    await waitLocale();
 };

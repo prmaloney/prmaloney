@@ -6,6 +6,6 @@ register('en', () => import('./locales/en.json'));
 register('de', () => import('./locales/de.json'));
 
 init({
-	fallbackLocale: defaultLocale,
-	initialLocale: browser ? getEnOrDeLocale(window.navigator.language) : defaultLocale
+    fallbackLocale: defaultLocale,
+    initialLocale: browser ? getEnOrDeLocale(window.navigator.language) : defaultLocale
 });
