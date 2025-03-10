@@ -4,6 +4,7 @@ import '$lib/i18n'; // Import to initialize. Important :)
 import { locale, waitLocale } from 'svelte-i18n';
 import type { LayoutLoad } from './$types';
 import { defaultLocale, getEnOrDeLocale } from '$lib/i18n/utils';
+import { injectAnalytics } from '@vercel/analytics/sveltekit';
 
 export const load: LayoutLoad = async ({ params }) => {
     if (params?.lang) {
@@ -12,4 +13,5 @@ export const load: LayoutLoad = async ({ params }) => {
         locale.set(getEnOrDeLocale(window.navigator.language) || defaultLocale);
     }
     await waitLocale();
+    injectAnalytics();
 };
