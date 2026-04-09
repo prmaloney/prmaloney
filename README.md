@@ -1,4 +1,5 @@
-# hey, i'm patrick 👋
+# patrick maloney
+### yo
 
 software engineer based in munich. i build full-stack web apps and care a lot about making the frontend feel obvious instead of painful.
 
