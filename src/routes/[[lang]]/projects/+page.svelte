@@ -6,8 +6,6 @@
     export let data: PageData;
     $: projects = data.projects;
 
-    let hover: string | null = null;
-
     const getProjectLink = (slug: string): string => {
         return $page.params.lang ? `/${$page.params.lang}/projects/${slug}` : `/projects/${slug}`;
     };
@@ -15,33 +13,27 @@
 
 <h1>{$_('projects.title')}</h1>
 
-<div class="grid gap-16 grid-cols-1 2xl:grid-cols-2">
+<div class="grid gap-6 grid-cols-1 xl:grid-cols-2">
     {#key $locale}
         {#each projects as project}
             <a
-                on:mouseover={() => (hover = project.name)}
-                on:focus={() => (hover = project.name)}
-                on:mouseout={() => (hover = null)}
-                on:blur={() => (hover = null)}
-                class="flex flex-row after:content-none gap-4"
+                class="group flex flex-row after:content-none gap-5 bg-surface border border-overlay rounded-xl p-5 hover:border-iris hover:shadow-[0_0_20px_rgba(203,166,247,0.15)] transition-all duration-300"
                 href={getProjectLink(project.slug)}
             >
                 <img
-                    class="w-32 h-32 md:w-52 md:h-52 object-contain"
+                    class="w-24 h-24 md:w-36 md:h-36 object-contain shrink-0 rounded-lg"
                     src={project.image[0]?.url}
                     alt={project.name}
                 />
-                <div class="flex flex-col">
-                    <h2
-                        class="after:bg-rose relative max-w-fit {hover === project.name
-                            ? 'hover'
-                            : ''}"
-                    >
+                <div class="flex flex-col justify-center gap-3">
+                    <h2 class="text-rose mb-0 mt-0 text-2xl group-hover:text-iris transition-colors duration-200">
                         {project.name}
                     </h2>
-                    <div class="flex flex-row gap-4 flex-wrap">
+                    <div class="flex flex-row gap-2 flex-wrap">
                         {#each project.tags as tag}
-                            <span class="text-foam">{tag}</span>
+                            <span class="text-xs font-mono px-2 py-0.5 bg-overlay text-foam rounded-full border border-foam/20">
+                                {tag}
+                            </span>
                         {/each}
                     </div>
                 </div>
@@ -49,20 +41,3 @@
         {/each}
     {/key}
 </div>
-
-<style>
-    h2::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: 2px;
-        bottom: 0;
-        left: 0;
-        transform-origin: bottom left;
-        transition: transform 0.25s ease-out;
-    }
-    .hover::after {
-        transform: scaleX(1);
-    }
-</style>

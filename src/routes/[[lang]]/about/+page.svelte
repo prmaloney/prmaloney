@@ -9,7 +9,11 @@
 
 <h1>{$_('about.title')}</h1>
 
-<p>{$_('about.thanks')}</p>
-{@html $_('about.takeALook', {
-    values: { portfolioUrl }
-})}
+<div class="flex flex-col gap-8">
+    <div class="bg-surface border border-overlay rounded-xl p-6">
+        <p class="mt-0">{$_('about.thanks')}</p>
+        {@html $_('about.takeALook', {
+            values: { portfolioUrl }
+        })}
+    </div>
+</div>

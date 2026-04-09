@@ -1,23 +1,23 @@
-@import '@fontsource/league-spartan' layer(base);
+@import '@fontsource-variable/jetbrains-mono/wght.css';
 
 @import 'tailwindcss';
 
 @theme {
   --color-*: initial;
-  --color-base: #191724;
-  --color-surface: #1f1d2e;
-  --color-overlay: #26233a;
-  --color-subtle: #908caa;
-  --color-rose: #ebbcba;
-  --color-love: #eb6f92;
-  --color-gold: #f6c177;
-  --color-pine: #31748f;
-  --color-foam: #9ccfd8;
-  --color-muted: #6e6a86;
-  --color-iris: #c4a7e7;
-  --color-white: #e0def4;
+  --color-base: #1e1e2e;
+  --color-surface: #181825;
+  --color-overlay: #313244;
+  --color-subtle: #9399b2;
+  --color-rose: #f2cdcd;
+  --color-love: #f38ba8;
+  --color-gold: #f9e2af;
+  --color-pine: #89b4fa;
+  --color-foam: #89dceb;
+  --color-muted: #6c7086;
+  --color-iris: #cba6f7;
+  --color-white: #cdd6f4;
 
-  --font-league-spartan: League Spartan, sans-serif;
+  --font-jetbrains-mono: 'JetBrains Mono Variable', monospace;
 }
 
 /*
@@ -43,7 +43,7 @@
         @apply bg-base;
         @apply text-white;
         @apply text-xl;
-        @apply font-league-spartan;
+        @apply font-jetbrains-mono;
     }
 
     h1 {
