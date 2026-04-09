@@ -11,5 +11,5 @@ outside of work: music, chess, and walks with my rescue dog dublin.
 
 ---
 
-![github stats](https://github-readme-stats.vercel.app/api?username=prmaloney&theme=catppuccin_mocha&show_icons=true&hide_border=true&rank_icon=github)
-![top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=prmaloney&theme=catppuccin_mocha&hide_border=true&layout=compact)
+![github stats](./profile/stats.svg)
+![top languages](./profile/top-langs.svg)
