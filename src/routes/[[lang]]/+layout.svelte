@@ -89,15 +89,6 @@
                 <Icon name="linkedin" />
             </a>
             <a
-                class="after:content-none p-2 rounded-lg bg-overlay hover:bg-pine/20 hover:text-pine border border-transparent hover:border-pine/30 transition-all duration-200"
-                href="https://twitter.com/prmaloney_dev"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="twitter"
-            >
-                <Icon name="twitter" />
-            </a>
-            <a
                 class="after:content-none p-2 rounded-lg bg-overlay hover:bg-iris/20 hover:text-iris border border-transparent hover:border-iris/30 transition-all duration-200"
                 href="mailto:pmaloney16@gmail.com"
                 target="_blank"
