@@ -105,7 +105,7 @@
                 <Icon name="mail" />
             </a>
         </div>
-        <span class="text-sm text-gray">© 2024 Patrick Maloney</span>
+        <span class="text-sm text-gray">© {new Date().getFullYear()} Patrick Maloney</span>
     </footer>
 </div>
 

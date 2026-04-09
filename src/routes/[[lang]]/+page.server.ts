@@ -5,6 +5,8 @@ import type { PageServerLoad } from './$types';
 
 type Homepage = {
     content: string;
+    profileImage: { url: string } | null;
+    dublinImage: { url: string } | null;
 };
 
 export const load = (async ({ params, fetch }) => {
@@ -12,6 +14,8 @@ export const load = (async ({ params, fetch }) => {
 	    query {
 	      homepages(locales: [${params.lang || get(locale)}]) {
 		content
+		profileImage { url }
+		dublinImage { url }
 	      }
 	    }
 `;
