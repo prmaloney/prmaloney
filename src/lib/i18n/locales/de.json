@@ -4,8 +4,9 @@
         "projects": "Projekte",
         "about": "Über diese Seite"
     },
-    "meta ": {
-        "title": "prmaloney"
+    "meta": {
+        "title": "prmaloney",
+        "description": "Patrick Maloneys Portfolio-Website."
     },
     "footer": {
         "contact": "Lass uns reden:"

@@ -5,7 +5,7 @@
 </script>
 
 <nav class="px-8 py-2">
-    <ul class="flex direction-row gap-4 list-none ml-0">
+    <ul class="flex direction-row gap-6 list-none ml-0">
         {#each links as { href, titleKey }}
             <li>
                 <a {href}>{$_(titleKey)}</a>

@@ -13,7 +13,7 @@ type Homepage = {
 export const load = (async ({ params, fetch }) => {
     const query = `
         query {
-            homepages(locales: [${params.lang || get(locale)}]) {
+            homepages(locales: [${params.lang || get(locale)}, en]) {
                 content
                 profileImage { url }
                 dublinImage { url }
