@@ -1,38 +1,14 @@
-# create-svelte
+# hey, i'm patrick 👋
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+software engineer based in munich. i build full-stack web apps and care a lot about making the frontend feel obvious instead of painful.
 
-## Creating a project
+currently a lead engineer at [squer solutions](https://squer.io), working across angular and typescript projects for clients in germany and austria.
 
-If you're seeing this, you've probably already done this step. Congrats!
+outside of work: music, chess, and walks with my rescue dog dublin.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+**portfolio:** [prmaloney.dev](https://prmaloney.dev) &nbsp;·&nbsp; [linkedin](https://linkedin.com/in/prmaloney) &nbsp;·&nbsp; [twitter](https://twitter.com/prmaloney_dev) &nbsp;·&nbsp; [email](mailto:pmaloney16@gmail.com)
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+---
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+![github stats](https://github-readme-stats.vercel.app/api?username=prmaloney&theme=catppuccin_mocha&show_icons=true&hide_border=true&rank_icon=github)
+![top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=prmaloney&theme=catppuccin_mocha&hide_border=true&layout=compact)
