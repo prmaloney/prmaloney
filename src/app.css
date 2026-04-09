@@ -1,8 +1,42 @@
-@import '@fontsource/league-spartan';
+@import '@fontsource/league-spartan' layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --color-*: initial;
+  --color-base: #191724;
+  --color-surface: #1f1d2e;
+  --color-overlay: #26233a;
+  --color-subtle: #908caa;
+  --color-rose: #ebbcba;
+  --color-love: #eb6f92;
+  --color-gold: #f6c177;
+  --color-pine: #31748f;
+  --color-foam: #9ccfd8;
+  --color-muted: #6e6a86;
+  --color-iris: #c4a7e7;
+  --color-white: #e0def4;
+
+  --font-league-spartan: League Spartan, sans-serif;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 @layer base {
     body {
