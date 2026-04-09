@@ -6,7 +6,7 @@ currently a lead engineer at [squer solutions](https://squer.io), working across
 
 outside of work: music, chess, and walks with my rescue dog dublin.
 
-**portfolio:** [prmaloney.dev](https://prmaloney.dev) &nbsp;·&nbsp; [linkedin](https://linkedin.com/in/prmaloney) &nbsp;·&nbsp; [twitter](https://twitter.com/prmaloney_dev) &nbsp;·&nbsp; [email](mailto:pmaloney16@gmail.com)
+**portfolio:** [prmaloney.com](https://www.prmaloney.com) &nbsp;·&nbsp; [linkedin](https://linkedin.com/in/prmaloney) &nbsp;·&nbsp; [email](mailto:pmaloney16@gmail.com)
 
 ---
 
