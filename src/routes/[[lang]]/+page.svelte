@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { PageData } from './$types';
     import { marked } from 'marked';
+    import { page } from '$app/stores';
     import TerminalPrompt from '$components/TerminalPrompt.svelte';
 
     export let data: PageData;
@@ -8,6 +9,7 @@
     $: [beforeDublin, afterDublin] = data.content.split('{{dublinImage}}');
     $: contentBefore = marked(beforeDublin ?? '');
     $: contentAfter = marked(afterDublin ?? '');
+    $: dublinHref = $page.params.lang ? `/${$page.params.lang}/dublin` : '/dublin';
 </script>
 
 <div class="flex flex-col md:flex-row md:items-center md:gap-12 mb-12">
@@ -33,14 +35,18 @@
 
 {#if data.dublinImage}
     <div class="flex justify-center my-6">
-        <div class="relative group">
+        <a
+            href={dublinHref}
+            class="relative group after:content-none block rounded-full transition-transform duration-300 hover:scale-105"
+            aria-label="Dublin's secret page"
+        >
             <div class="absolute inset-0 rounded-full bg-gradient-to-br from-gold to-peach blur-sm opacity-50 group-hover:opacity-80 transition-opacity duration-300 scale-105"></div>
             <img
                 class="relative h-32 w-32 object-cover rounded-full ring-2 ring-overlay"
                 src={data.dublinImage.url}
                 alt="Dublin"
             />
-        </div>
+        </a>
     </div>
 {/if}
 
