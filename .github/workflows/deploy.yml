@@ -1,0 +1,44 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'profile/**'
+      - '.github/workflows/stats.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      HOST: 91.99.140.15
+      REMOTE: /opt/prmaloney
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --legacy-peer-deps
+      - run: npm run build
+        env:
+          HYGRAPH_URL: ${{ secrets.HYGRAPH_URL }}
+      - name: Configure SSH
+        run: |
+          install -m 700 -d ~/.ssh
+          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          echo "$HOST ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO9+MSDRdDqoGNlJoIemhv5LkEKozzY78iYvQbitcSFs" > ~/.ssh/known_hosts
+      - name: Upload
+        run: rsync -az --delete build package.json package-lock.json .npmrc deploy@$HOST:$REMOTE/
+      - name: Install and restart
+        run: ssh deploy@$HOST "cd $REMOTE && npm ci --omit=dev --legacy-peer-deps --ignore-scripts && sudo systemctl restart prmaloney"
+      - name: Health check
+        run: |
+          sleep 3
+          ssh deploy@$HOST 'curl -fsS -o /dev/null localhost:3000/ && curl -fsS -o /dev/null localhost:3000/en'
