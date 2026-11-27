@@ -1,6 +1,5 @@
 import { HYGRAPH_URL } from '$env/static/private';
-import { locale } from 'svelte-i18n';
-import { get } from 'svelte/store';
+import { defaultLocale } from '$lib/i18n/utils';
 import type { PageServerLoad } from './$types';
 
 type Project = {
@@ -18,7 +17,7 @@ type Project = {
 export const load = (async ({ params, fetch }) => {
     const query = `
     query {
-      projects(where: {slug: "${params.slug}"}, locales: [${params.lang || get(locale)}, en]) {
+      projects(where: {slug: "${params.slug}"}, locales: [${params.lang || defaultLocale}, en]) {
         id,
         name,
         tags,
