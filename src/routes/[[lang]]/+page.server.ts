@@ -1,6 +1,5 @@
 import { HYGRAPH_URL } from '$env/static/private';
-import { locale } from 'svelte-i18n';
-import { get } from 'svelte/store';
+import { defaultLocale } from '$lib/i18n/utils';
 import type { PageServerLoad } from './$types';
 
 type Homepage = {
@@ -13,7 +12,7 @@ type Homepage = {
 export const load = (async ({ params, fetch }) => {
     const query = `
         query {
-            homepages(locales: [${params.lang || get(locale)}, en]) {
+            homepages(locales: [${params.lang || defaultLocale}, en]) {
                 content
                 profileImage { url }
                 dublinImage { url }
